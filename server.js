@@ -37,6 +37,9 @@ mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true 
 app.listen(PORT, function() {
     console.log("App running on port " + PORT + "!");
   });
+  
+
 
 // Require routes from controller
-require('./controllers.js/routes')(app);
+var routes = require('./controllers.js/routes')(app);
+app.use(routes); 
