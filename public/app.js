@@ -8,8 +8,27 @@ $.getJSON("/articles", function(data) {
       $("#articles").append("<p data-id='" + data[i]._id + "'>" + "<h6>" + data[i].title + "</h6>" + "<br />" + data[i].link + "</p>").append(newButton1).append(newButton2);
     }
   });
-  
-  
+
+// Save an article button  
+
+$(".saveBtn").on("click", function(){
+  addArticle = function() {
+    savedTitle = $(this).attr("data-title")
+    savedLink = $(this).attr("data-link")
+    
+    $.ajax({
+      method: "POST",
+      url: "/api/saved",
+      data: {
+        title: savedTitle,
+        link: savedLink,
+      }
+    })
+    .then(data => console.log("Saved: ", data));
+    location.reload()
+  }
+});
+
   // Whenever someone clicks a p tag
   $(document).on("click", "p", function() {
     // Empty the notes from the note section
