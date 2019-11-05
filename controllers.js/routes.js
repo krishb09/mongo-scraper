@@ -65,7 +65,7 @@ module.exports = function(app) {
             });
         });
         // Send a message to the client
-        res.send("Scrape Complete!");
+        res.send("Scrape Complete!...hit back button");
         });
     });
 

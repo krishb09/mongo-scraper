@@ -8,7 +8,7 @@ $(".saveBtn").on("click", function() {
       url: "/articles/save/" + thisId
 
   }).then(data => console.log("Saved: ", data));
-  // window.location.href("/"); 
+  // location.reload(); 
 });
 
 
@@ -35,7 +35,7 @@ $(".saveBtn").on("click", function() {
         console.log(data);
         // Empty the notes section
         $("#notes").empty();
-        // window.location("/saved"); 
+        // location.reload(); 
       });
   
     // Also, remove the values entered in the input and textarea for note entry

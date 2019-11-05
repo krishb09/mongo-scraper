@@ -20,16 +20,22 @@
                                 <div class="card-body">
                                     <h4 class="card-title"> Saved Articles: </h4>
                                     <div id="articles"></div>
-                                     {{#each articles }}
+                                {{#if saved}}
+                                    {{#each articles}}
                                         <div class="panel panel-default">
                                         <div class="panel-heading" role="tab">
                                         <h4 class="panel-title text-center">
                                             <a href="{{this.link }}" target="_blank">{{ this.title }}</a>
                                         </h4>
+                                        <p>
+                                        <button type="button" data-id= {{this._id}} class="saveNote btn btn-block btn-warning">
+                                        Create Note</button>
+                                        </p>
                                         <hr>
                                         </div>
                                     </div>
                                     {{/each}}    
+                                {{/if}}
                             </div>
                             </div>
                     </div>
