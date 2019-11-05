@@ -17,7 +17,7 @@ var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Make public a static folder
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
 
 
 // Setup engine for Handlebars
